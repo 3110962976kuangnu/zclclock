@@ -1,0 +1,53 @@
+﻿<Window x:Class="zclclock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zclclock"
+        mc:Ignorable="d"
+        Title="time" Height="300" Width="250">
+    <Grid>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<Ellipse Width="10" Height="10" Fill="DarkGray"/>-->
+                        <TextBlock>时钟</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="timetxt" FontSize="30">
+                        <Run x:Name="run" Text="0"/>0</TextBlock>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="闹钟">
+                <StackPanel>
+                    <Label>闹钟时间设置</Label>
+                    <Label x:Name="L1"></Label>
+                    <Label>小时</Label>
+                    <TextBox x:Name="alarmH" Margin="10 0">7</TextBox>
+                    <Label>分钟</Label>
+                    <TextBox x:Name="alarmM" Margin="10 0">0</TextBox>
+                    <Button Margin="10 5" Click="Button_Click">设置闹钟</Button>
+                    <Button Margin="10 5" Click="Button_Click_1">取消闹钟</Button>
+                    <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Text, ElementName=timetxt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">0</TextBlock>
+                    
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="定时器">
+                <StackPanel>
+                    <Label>定时时长设置</Label>
+                    <Label/>
+                    <Label>小时</Label>
+                    <TextBox Margin="10 0"></TextBox>
+                    <Label>分钟</Label>
+                    <TextBox Margin="10 0"></TextBox>
+                    <Label>秒</Label>
+                    <TextBox Margin="10 0"></TextBox>
+                    <Button Margin="10 5">启动定时器</Button>
+                    <Button Margin="10 5">取消定时器</Button>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
