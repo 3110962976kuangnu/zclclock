@@ -1,0 +1,15 @@
+﻿<Window x:Class="newclock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:newclock"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="200">
+    <Grid>
+        <DockPanel Margin="10">
+            <TextBlock Height="80" Width="80" Text="{Binding wel.ttt }" ></TextBlock>
+            <Button Height="80" Width="80" >btn</Button>
+        </DockPanel>
+    </Grid>
+</Window>
