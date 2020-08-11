@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using zclclock.ViewModel;
+using GalaSoft.MvvmLight;
 
 
 namespace zclclock
@@ -27,23 +29,29 @@ namespace zclclock
         public MainWindow()
         {
             InitializeComponent();
-            showtimer = new DispatcherTimer();
+            this.DataContext = new clockviewmodel();
+            /*showtimer = new DispatcherTimer();
             showtimer.Tick += new EventHandler(ShowCurTimer);
             showtimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
-            showtimer.Start();
+            showtimer.Start();*/
         }
         bool B_alarm = false;
         string alarmTime;
+       
         
-        public string nowtime=new TimeSpan(0,0,0).ToString();
-        private DispatcherTimer showtimer;
-        public void ShowCurTimer(object sender,EventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            timetxt.Text = DateTime.Now.ToString("HH:mm:ss");
-            
+            alarmTime = new TimeSpan(Convert.ToInt32(alarmH.Text), Convert.ToInt32(alarmM.Text), 0).ToString();
+            B_alarm = true;
+            L1.Content = "闹钟已设置为："+alarmTime;
+
+
+            /**/
+
             if (B_alarm)
             {
-                if (alarmTime == timetxt.Text)
+                if (alarmTime == "")
                 {
                     //MessageBox.Show("time ");
                     Window alarmwindow = new Window();
@@ -59,14 +67,7 @@ namespace zclclock
                     //System.Media.SystemSounds.Asterisk.Play();
                 }
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            alarmTime = new TimeSpan(Convert.ToInt32(alarmH.Text), Convert.ToInt32(alarmM.Text), 0).ToString();
-            B_alarm = true;
-            L1.Content = "闹钟已设置为："+alarmTime;
-            
+            /**/
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

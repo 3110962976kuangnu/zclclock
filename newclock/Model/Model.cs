@@ -19,7 +19,9 @@ namespace newclock.Model
                 _ttt = value;
                 RaisePropertyChanged(() => ttt);
             }
+            
         }
+
 
     }
 }

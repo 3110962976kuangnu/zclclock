@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zclclock", "zclclock\zclclock.csproj", "{07ED494D-F17E-4F86-A544-C09EF337DF32}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "一般", "一般", "{28B8CECF-F494-41A4-A22D-BEE62E5056C9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newclock", "newclock\newclock.csproj", "{8F0C144F-8F2A-4A17-9815-BAF1E1AB1BFC}"
 EndProject
 Global
@@ -26,9 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{07ED494D-F17E-4F86-A544-C09EF337DF32} = {28B8CECF-F494-41A4-A22D-BEE62E5056C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F47554EA-5F37-4ECD-BD1F-9DCCFEFBD1FE}

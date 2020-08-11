@@ -16,8 +16,7 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="timetxt" FontSize="30">
-                        <Run x:Name="run" Text="0"/>0</TextBlock>
+                    <TextBlock FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
                 </StackPanel>
             </TabItem>
             <TabItem Header="闹钟">
@@ -30,7 +29,7 @@
                     <TextBox x:Name="alarmM" Margin="10 0">0</TextBox>
                     <Button Margin="10 5" Click="Button_Click">设置闹钟</Button>
                     <Button Margin="10 5" Click="Button_Click_1">取消闹钟</Button>
-                    <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Text, ElementName=timetxt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">0</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
                     
                 </StackPanel>
             </TabItem>

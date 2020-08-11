@@ -25,6 +25,6 @@ namespace newclock
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();
-        }
+                    }
     }
 }
