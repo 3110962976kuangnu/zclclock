@@ -39,17 +39,17 @@ namespace zclclock
         string alarmTime;
        
         
-
+        /*
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             alarmTime = new TimeSpan(Convert.ToInt32(alarmH.Text), Convert.ToInt32(alarmM.Text), 0).ToString();
             B_alarm = true;
             L1.Content = "闹钟已设置为："+alarmTime;
 
-
+        */
             /**/
 
-            if (B_alarm)
+            /*if (B_alarm)
             {
                 if (alarmTime == "")
                 {
@@ -66,16 +66,16 @@ namespace zclclock
 
                     //System.Media.SystemSounds.Asterisk.Play();
                 }
-            }
-            /**/
+            }*/
+            /*
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+*/
+       /* private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             B_alarm = false;
             alarmH.Text = "12";
             alarmM.Text = "0";
             L1.Content = "";
-        }
+        }*/
     }
 }
