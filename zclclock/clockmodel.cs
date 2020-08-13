@@ -53,7 +53,16 @@ namespace zclclock.Model
         {
             get
             {
-                return new RelayCommand(() => MessageBox.Show(timetext));
+                return new RelayCommand(() => {
+                    alarmwindow alarmwindow = new alarmwindow();
+                    bool? resualt=alarmwindow.ShowDialog();
+                    if (resualt == true)
+                    {
+                        MessageBox.Show("is ok");
+                    }
+
+                    
+                });
             }
         }
    
