@@ -16,7 +16,7 @@
                 </TabItem.Header>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
-                    <Button Content="button" Command="{Binding time_text.Buttoncommand}"></Button>
+                    <!--<Button Content="button" Command="{Binding time_text.Buttoncommand}"></Button>-->
                 </StackPanel>
             </TabItem>
             <TabItem Header="闹钟">

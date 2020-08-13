@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:zclclock"
         mc:Ignorable="d"
         Title="alarmwindow" Height="200" Width="300">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -15,8 +16,8 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"> a</TextBlock>
-        <Button Grid.Column="0" Grid.Row="1" Margin="10" Content="ok" Click="ok_click"/>
-        <Button Grid.Column="1" Grid.Row="1" Margin="10" Content="no"></Button>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="text"> a</TextBlock>
+        <Button Grid.Column="0" Grid.Row="1" Margin="10" Content="别闹了" Click="ok_click"/>
+        <Button Grid.Column="1" Grid.Row="1" Margin="10" Content="等会儿再闹" Click="no_clcik"></Button>
     </Grid>
 </Window>

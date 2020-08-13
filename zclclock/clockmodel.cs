@@ -45,7 +45,14 @@ namespace zclclock.Model
                 if (timetext == alarmtime)
                 {
                     //应是用一个自定义窗口
-                    MessageBox.Show("it is time to go!");
+                    //MessageBox.Show("it is time to go!");
+                    alarmwindow alarmwindow = new alarmwindow(timetext);
+                    bool? resualt = alarmwindow.ShowDialog();
+                    if (resualt == false)
+                    {
+                        alarmtime = new TimeSpan(Convert.ToInt32(alarmtimeH), Convert.ToInt32(alarmtimeM) + 10, 0).ToString();
+                        //MessageBox.Show(alarmtime);
+                    }
                 }
             }
         }
@@ -54,11 +61,12 @@ namespace zclclock.Model
             get
             {
                 return new RelayCommand(() => {
-                    alarmwindow alarmwindow = new alarmwindow();
+                    alarmwindow alarmwindow = new alarmwindow(timetext);
                     bool? resualt=alarmwindow.ShowDialog();
-                    if (resualt == true)
+                    if (resualt == false)
                     {
-                        MessageBox.Show("is ok");
+                        alarmtime = new TimeSpan(Convert.ToInt32(alarmtimeH), Convert.ToInt32(alarmtimeM)+10, 0).ToString();
+                        MessageBox.Show(alarmtime);
                     }
 
                     
@@ -137,5 +145,16 @@ namespace zclclock.Model
                 });
             }
         }
+    }
+    class countdown :ObservableObject
+    {
+        private string _time;
+
+        public string time
+        {
+            get { return _time; }
+            set { _time = value;RaisePropertyChanged(() => time); }
+        }
+
     }
 }

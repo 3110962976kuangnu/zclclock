@@ -8,7 +8,7 @@ namespace zclclock.ViewModel
         public clockviewmodel()
         {
             time_text = new clockmodel() {
-                timetext = "time to change",
+                timetext = "",
                 alarmtimeM = "11",
                 alarmtimeH = "23",
                 alarmstatus ="闹钟未设置"

@@ -30,52 +30,6 @@ namespace zclclock
         {
             InitializeComponent();
             this.DataContext = new clockviewmodel();
-            /*showtimer = new DispatcherTimer();
-            showtimer.Tick += new EventHandler(ShowCurTimer);
-            showtimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
-            showtimer.Start();*/
         }
-        bool B_alarm = false;
-        string alarmTime;
-       
-        
-        /*
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            alarmTime = new TimeSpan(Convert.ToInt32(alarmH.Text), Convert.ToInt32(alarmM.Text), 0).ToString();
-            B_alarm = true;
-            L1.Content = "闹钟已设置为："+alarmTime;
-
-        */
-            /**/
-
-            /*if (B_alarm)
-            {
-                if (alarmTime == "")
-                {
-                    //MessageBox.Show("time ");
-                    Window alarmwindow = new Window();
-                    alarmwindow.Height = 200;
-                    alarmwindow.Width = 200;
-                    alarmwindow.ShowInTaskbar = false;
-                    Button isok = new Button();
-                    isok.Content = "闹钟到了";
-                    isok.Margin = new Thickness(15);
-                    alarmwindow.Content = isok;
-                    alarmwindow.Show();
-
-                    //System.Media.SystemSounds.Asterisk.Play();
-                }
-            }*/
-            /*
-        }
-*/
-       /* private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            B_alarm = false;
-            alarmH.Text = "12";
-            alarmM.Text = "0";
-            L1.Content = "";
-        }*/
     }
 }
