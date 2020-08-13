@@ -7,8 +7,13 @@ namespace zclclock.ViewModel
     {
         public clockviewmodel()
         {
-            time_text = new clockmodel() { timetext = "time to change" };
-            alarmmodel = new alarmmodel() { alarmtimeM = "11",alarmtimeH="23" };
+            time_text = new clockmodel() {
+                timetext = "time to change",
+                alarmtimeM = "11",
+                alarmtimeH = "23",
+                alarmstatus ="闹钟未设置"
+            };
+            
         }
         /// <summary>
         /// 时钟界面
@@ -22,19 +27,7 @@ namespace zclclock.ViewModel
                 RaisePropertyChanged(() => time_text);
             }
         }
-        /// <summary>
-        /// 闹钟界面
-        /// </summary>
-        private alarmmodel _alarmmodel;
-        public alarmmodel alarmmodel
-        {
-            get { return _alarmmodel; }
-            set { 
-                _alarmmodel = value;
-                RaisePropertyChanged(() =>alarmmodel);
-            }
-        }
-
+        
 
 
 
