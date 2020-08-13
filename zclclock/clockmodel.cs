@@ -45,7 +45,7 @@ namespace zclclock.Model
                 if (timetext == alarmtime)
                 {
                     //应是用一个自定义窗口
-                    //MessageBox.Show("it is time to go!");
+                    //MessageBox.Show("it is ctime to go!");
                     alarmwindow alarmwindow = new alarmwindow(timetext);
                     bool? resualt = alarmwindow.ShowDialog();
                     if (resualt == false)
@@ -148,12 +148,39 @@ namespace zclclock.Model
     }
     class countdown :ObservableObject
     {
-        private string _time;
 
-        public string time
+        
+
+        public countdown()
+        {
+            this.ctime = "aslkdfjalksj";
+        }
+        private string _time;
+        public string ctime
         {
             get { return _time; }
-            set { _time = value;RaisePropertyChanged(() => time); }
+            set {
+                _time = value;
+                RaisePropertyChanged(() => ctime); 
+            }
+        }
+        public void downtime(object sender, EventArgs e)
+        {
+            ctime = "cro";
+                //(TimeSpan.Parse(ctime)-new TimeSpan(0, 0, 1)).ToString();
+        }
+
+        public ICommand startcountdown
+        {
+            get
+            {
+                return new RelayCommand(()=> {
+                    ctime = "hello";
+                    //cdown.Start();
+                });
+            }
+
+            
         }
 
     }

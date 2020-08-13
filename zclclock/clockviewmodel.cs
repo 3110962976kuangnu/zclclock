@@ -13,6 +13,10 @@ namespace zclclock.ViewModel
                 alarmtimeH = "23",
                 alarmstatus ="闹钟未设置"
             };
+            timer = new countdown()
+            {
+                ctime = ""
+            };
             
         }
         /// <summary>
@@ -27,7 +31,18 @@ namespace zclclock.ViewModel
                 RaisePropertyChanged(() => time_text);
             }
         }
-        
+        private countdown _timer;
+
+        public countdown timer
+        {
+            get { return _timer; }
+            set {
+                _timer = value; 
+                RaisePropertyChanged(() => timer); 
+            }
+        }
+
+
 
 
 
