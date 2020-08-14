@@ -19,11 +19,11 @@ namespace zclclock
     /// </summary>
     public partial class alarmwindow : Window
     {
-        public alarmwindow(string now)
+        public alarmwindow(string msg)
         {
             InitializeComponent();
 
-            text.Text = "当前时间是：" + now;
+            text.Text = msg;
              MediaPlayer player = new MediaPlayer();
              //player.Open(new Uri("C:/Users/123/Documents/wpflearn/zclclock/zclclock/zclclock/Resources/alarm.wav"));
              player.Open(new Uri("./Resources/alarm.wav", UriKind.Relative));

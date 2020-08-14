@@ -46,7 +46,7 @@ namespace zclclock.Model
                 {
                     //应是用一个自定义窗口
                     //MessageBox.Show("it is ctime to go!");
-                    alarmwindow alarmwindow = new alarmwindow(timetext);
+                    alarmwindow alarmwindow = new alarmwindow("当前时间是："+ timetext);
                     bool? resualt = alarmwindow.ShowDialog();
                     if (resualt == false)
                     {
@@ -197,6 +197,13 @@ namespace zclclock.Model
         public void downtime(object sender, EventArgs e)
         {
             ctime = (TimeSpan.Parse(ctime)-new TimeSpan(0, 0, 1)).ToString();
+            if (ctime==new TimeSpan(0,0,0).ToString())
+            {
+                ctime = "";
+                count.Stop();
+                alarmwindow alarmwindow = new alarmwindow("定时器定时结束");
+                bool? resualt = alarmwindow.ShowDialog();
+            }
         }
 
         public ICommand startcountdown
