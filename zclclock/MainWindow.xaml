@@ -38,13 +38,13 @@
                     <Label>定时时长设置</Label>
                     <Label/>
                     <Label>小时</Label>
-                    <TextBox Margin="10 0"></TextBox>
+                    <TextBox Margin="10 0" Text="{Binding timer.ctimeH}"></TextBox>
                     <Label>分钟</Label>
-                    <TextBox Margin="10 0"></TextBox>
+                    <TextBox Margin="10 0" Text="{Binding timer.ctimeM}"></TextBox>
                     <Label>秒</Label>
-                    <TextBox Margin="10 0"></TextBox>
+                    <TextBox Margin="10 0" Text="{Binding timer.ctimeS}"></TextBox>
                     <Button Margin="10 5" Command="{Binding timer.startcountdown}">启动定时器</Button>
-                    <Button Margin="10 5">取消定时器</Button>
+                    <Button Margin="10 5" Command="{Binding timer.stopcountdown}">取消定时器</Button>
                     <TextBlock FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding timer.ctime}"/>
                 </StackPanel>
             </TabItem>

@@ -15,7 +15,10 @@ namespace zclclock.ViewModel
             };
             timer = new countdown()
             {
-                ctime = ""
+                ctime = "",
+                ctimeH = 0,
+                ctimeM = 10,
+                ctimeS=00
             };
             
         }

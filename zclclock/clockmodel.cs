@@ -153,8 +153,11 @@ namespace zclclock.Model
 
         public countdown()
         {
-            this.ctime = "aslkdfjalksj";
+            count = new DispatcherTimer();
+            count.Tick += new EventHandler(downtime);
+            count.Interval = new TimeSpan(0, 0, 1);
         }
+        #region 时分秒定义
         private string _time;
         public string ctime
         {
@@ -164,10 +167,36 @@ namespace zclclock.Model
                 RaisePropertyChanged(() => ctime); 
             }
         }
+
+        private int _ctimeH;
+        private int _ctimeM;
+        private int _ctimeS;
+        public int ctimeH
+        {
+            get { return _ctimeH; }
+            set { _ctimeH = value; RaisePropertyChanged(() => ctimeH); }
+        }
+        public int ctimeM
+        {
+            get { return _ctimeM; }
+            set { _ctimeM = value;RaisePropertyChanged(() => ctimeM); }
+        }
+        public int ctimeS
+        {
+            get { return _ctimeS; }
+            set { _ctimeS = value;RaisePropertyChanged(() => ctimeS); }
+        }
+        #endregion
+
+
+
+
+
+        private DispatcherTimer count;
+
         public void downtime(object sender, EventArgs e)
         {
-            ctime = "cro";
-                //(TimeSpan.Parse(ctime)-new TimeSpan(0, 0, 1)).ToString();
+            ctime = (TimeSpan.Parse(ctime)-new TimeSpan(0, 0, 1)).ToString();
         }
 
         public ICommand startcountdown
@@ -175,13 +204,20 @@ namespace zclclock.Model
             get
             {
                 return new RelayCommand(()=> {
-                    ctime = "hello";
-                    //cdown.Start();
+                    ctime = new TimeSpan(ctimeH,ctimeM,ctimeS).ToString();
+                    count.Start();
                 });
             }
-
-            
         }
-
+        public ICommand stopcountdown
+        {
+            get
+            {
+                return new RelayCommand(() =>{
+                    ctime = "";
+                    count.Stop();
+                });
+            }
+        }
     }
 }
