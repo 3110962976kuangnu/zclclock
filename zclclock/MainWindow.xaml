@@ -7,13 +7,8 @@
         mc:Ignorable="d"
         Title="time" Height="320" Width="250">
     <Grid>
-        <TabControl>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock>时钟</TextBlock>
-                    </StackPanel>
-                </TabItem.Header>
+        <TabControl >
+            <TabItem Header="时钟">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
                     <!--<Button Content="button" Command="{Binding time_text.Buttoncommand}"></Button>-->
@@ -30,23 +25,59 @@
                     <Button Margin="10 5" Content="设置闹钟" Command="{Binding time_text.Setalarm}"></Button>
                     <Button Margin="10 5" Content="取消闹钟" Command="{Binding time_text.Removealarm}"></Button>
                     <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
-                    
+
                 </StackPanel>
             </TabItem>
             <TabItem Header="定时器">
-                <StackPanel>
-                    <Label>定时时长设置</Label>
-                    <Label/>
-                    <Label>小时</Label>
-                    <TextBox Margin="10 0" Text="{Binding timer.ctimeH}"></TextBox>
-                    <Label>分钟</Label>
-                    <TextBox Margin="10 0" Text="{Binding timer.ctimeM}"></TextBox>
-                    <Label>秒</Label>
-                    <TextBox Margin="10 0" Text="{Binding timer.ctimeS}"></TextBox>
-                    <Button Margin="10 5" Command="{Binding timer.startcountdown}">启动定时器</Button>
-                    <Button Margin="10 5" Command="{Binding timer.stopcountdown}">取消定时器</Button>
-                    <TextBlock FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding timer.ctime}"/>
-                </StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28">定时时长设置</TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">小时</TextBlock>
+                            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">分钟</TextBlock>
+                            <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">秒</TextBlock>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding timer.ctimeH }" Grid.Column="0"  VerticalAlignment="Top"/>
+                            <TextBox Text="{Binding timer.ctimeM }" Grid.Column="1"  VerticalAlignment="Top"/>
+                            <TextBox Text="{Binding timer.ctimeS }" Grid.Column="2"  VerticalAlignment="Top"/> 
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Margin="10" Command="{Binding timer.startcountdown}">启动定时器</Button>
+                            <Button Grid.Column="1" Margin="10" Command="{Binding timer.stopcountdown}">取消定时器</Button>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <TextBlock FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding timer.ctime}"/>
+                    </Grid>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
