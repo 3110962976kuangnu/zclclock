@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zclclock"
         mc:Ignorable="d"
-        Title="alarmwindow" Height="200" Width="300" WindowStartupLocation="CenterOwner" Topmost="True" ResizeMode="NoResize" Icon="clock_128px_1277394_easyicon.net.ico">
+        Title=" " Height="200" Width="300" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize" Icon="clock_128px_1277394_easyicon.net.ico">
     <Window.Background>
         <SolidColorBrush Color="White"/>
     </Window.Background>
@@ -20,7 +20,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="text"> a</TextBlock>
-        <Button Grid.Column="0" Grid.Row="1" Margin="10" Content="别闹了" Click="ok_click"/>
-        <Button Grid.Column="1" Grid.Row="1" Margin="10" Content="等会儿再闹" Click="no_clcik"></Button>
+        <Button Grid.Column="0" Grid.Row="1" Margin="10" Content="别响了" Click="ok_click"/>
+        <Button Grid.Column="1" Grid.Row="1" Margin="10" Content="等会儿再响" Click="no_clcik"></Button>
     </Grid>
 </Window>

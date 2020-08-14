@@ -220,6 +220,15 @@ namespace zclclock.Model
                 count.Stop();
                 alarmwindow alarmwindow = new alarmwindow("定时器定时结束");
                 bool? resualt = alarmwindow.ShowDialog();
+                if(resualt==true)
+                {
+
+                }
+                else
+                {
+                    ctime = new TimeSpan(ctimeH, ctimeM, ctimeS).ToString();
+                    count.Start();
+                }
             }
         }
 
