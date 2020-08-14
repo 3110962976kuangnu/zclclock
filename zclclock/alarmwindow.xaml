@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zclclock"
         mc:Ignorable="d"
-        Title="alarmwindow" Height="200" Width="300">
-    
+        Title="alarmwindow" Height="200" Width="300" WindowStartupLocation="CenterOwner" Topmost="True" ResizeMode="NoResize" Icon="clock_128px_1277394_easyicon.net.ico">
+    <Window.Background>
+        <SolidColorBrush Color="White"/>
+    </Window.Background>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

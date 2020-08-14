@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zclclock"
         mc:Ignorable="d"
-        Title="time" Height="320" Width="250" ResizeMode="NoResize">
+        Title="time" Height="320" Width="250" ResizeMode="NoResize" Icon="clock_128px_1277394_easyicon.net.ico" WindowStartupLocation="CenterScreen" >
     <Grid>
         <TabControl Grid.RowSpan="5" >
             <TabItem Header="时钟">
