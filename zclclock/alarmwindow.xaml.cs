@@ -22,7 +22,7 @@ namespace zclclock
         public alarmwindow(string msg)
         {
             InitializeComponent();
-
+            this.Topmost = true;
             text.Text = msg;
              MediaPlayer player = new MediaPlayer();
              //player.Open(new Uri("C:/Users/123/Documents/wpflearn/zclclock/zclclock/zclclock/Resources/alarm.wav"));

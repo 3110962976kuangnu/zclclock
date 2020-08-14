@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zclclock"
         mc:Ignorable="d"
-        Title="time" Height="320" Width="250">
+        Title="time" Height="320" Width="250" ResizeMode="NoResize">
     <Grid>
-        <TabControl >
+        <TabControl Grid.RowSpan="5" >
             <TabItem Header="时钟">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
@@ -15,18 +15,43 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="闹钟">
-                <StackPanel>
-                    <Label>闹钟时间设置</Label>
-                    <Label Content="{Binding time_text.alarmstatus}"></Label>
-                    <Label>小时</Label>
-                    <TextBox Margin="10 0" Text="{Binding time_text.alarmtimeH}"></TextBox>
-                    <Label>分钟</Label>
-                    <TextBox Margin="10 0" Text="{Binding time_text.alarmtimeM}"></TextBox>
-                    <Button Margin="10 5" Content="设置闹钟" Command="{Binding time_text.Setalarm}"></Button>
-                    <Button Margin="10 5" Content="取消闹钟" Command="{Binding time_text.Removealarm}"></Button>
-                    <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
-
-                </StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">闹钟时间设置</TextBlock>
+                    <TextBlock Grid.Row="1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding time_text.alarmstatus}"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">小时</Label>
+                        <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">分钟</Label>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Margin="10 0" Text="{Binding time_text.alarmtimeH}"  VerticalAlignment="Top" ></TextBox>
+                        <TextBox Grid.Column="1" Margin="10 0" Text="{Binding time_text.alarmtimeM}"  VerticalAlignment="Top"></TextBox>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Margin="10 10" Content="设置闹钟" Command="{Binding time_text.Setalarm}"  ></Button>
+                        <Button Grid.Column="1" Margin="10 10" Content="取消闹钟" Command="{Binding time_text.Removealarm}" ></Button>
+                    </Grid>
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Center" FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
+                </Grid>
             </TabItem>
             <TabItem Header="定时器">
                 <Grid>
@@ -61,7 +86,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBox Text="{Binding timer.ctimeH }" Grid.Column="0"  VerticalAlignment="Top"/>
                             <TextBox Text="{Binding timer.ctimeM }" Grid.Column="1"  VerticalAlignment="Top"/>
-                            <TextBox Text="{Binding timer.ctimeS }" Grid.Column="2"  VerticalAlignment="Top"/> 
+                            <TextBox Text="{Binding timer.ctimeS }" Grid.Column="2"  VerticalAlignment="Top"/>
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="3">

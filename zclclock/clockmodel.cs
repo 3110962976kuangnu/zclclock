@@ -44,14 +44,20 @@ namespace zclclock.Model
             {
                 if (timetext == alarmtime)
                 {
-                    //应是用一个自定义窗口
+                    //应该用一个自定义窗口
                     //MessageBox.Show("it is ctime to go!");
                     alarmwindow alarmwindow = new alarmwindow("当前时间是："+ timetext);
                     bool? resualt = alarmwindow.ShowDialog();
                     if (resualt == false)
                     {
                         alarmtime = new TimeSpan(Convert.ToInt32(alarmtimeH), Convert.ToInt32(alarmtimeM) + 10, 0).ToString();
+                        alarmstatus = "闹钟时间已设置为：" + alarmtime;
                         //MessageBox.Show(alarmtime);
+                    }
+                    else if(resualt==true)
+                    {
+                        isalarmok = false;
+                        alarmstatus = "闹钟未设置";
                     }
                 }
             }
@@ -101,7 +107,7 @@ namespace zclclock.Model
             get { return _alarmtimeM; }
             set {
                 int a = 1;
-                if (int.TryParse(value, out a) && Convert.ToInt32(value) < 25 && Convert.ToInt32(value) > 0)
+                if (int.TryParse(value, out a) && Convert.ToInt32(value) < 61 && Convert.ToInt32(value) > 0)
                 {
                     _alarmtimeM = value;
 
