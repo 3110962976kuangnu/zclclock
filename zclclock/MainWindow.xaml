@@ -10,7 +10,7 @@
         <TabControl Grid.RowSpan="5" >
             <TabItem Header="时钟">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock FontSize="30" Text="{Binding time_text.timetext}"></TextBlock>
+                    <TextBlock FontSize="40" Text="{Binding time_text.timetext}"></TextBlock>
                     <!--<Button Content="button" Command="{Binding time_text.Buttoncommand}"></Button>-->
                 </StackPanel>
             </TabItem>

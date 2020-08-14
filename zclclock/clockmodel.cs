@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -180,7 +181,17 @@ namespace zclclock.Model
         public int ctimeH
         {
             get { return _ctimeH; }
-            set { _ctimeH = value; RaisePropertyChanged(() => ctimeH); }
+            set {
+                if (value <= 24 && value >= 0)
+                    {
+                        _ctimeH = value; RaisePropertyChanged(() => ctimeH); 
+                    }
+                else
+                {
+                    MessageBox.Show("请输入0到24 之间的数字");
+                }
+
+            }
         }
         public int ctimeM
         {
