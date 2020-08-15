@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using System.Windows.Threading;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -82,7 +83,6 @@ namespace zclclock.Model
         }
    
         private string _alarmtimeH;
-
         public string alarmtimeH
         {
             get{return _alarmtimeH;}
@@ -101,8 +101,8 @@ namespace zclclock.Model
                 RaisePropertyChanged(() => alarmtimeH);
             }
         }
+       
         private string _alarmtimeM;
-
         public string alarmtimeM
         {
             get { return _alarmtimeM; }
@@ -117,16 +117,51 @@ namespace zclclock.Model
                 {
                     MessageBox.Show("请输入正确的分钟数字");
                 }
-                RaisePropertyChanged(() => alarmtimeH);
+                RaisePropertyChanged(() => alarmtimeM);
             }
         }
+        
         private string _alarmstatus;
-
         public string alarmstatus
         {
             get { return _alarmstatus; }
             set { _alarmstatus = value; RaisePropertyChanged(() => alarmstatus); }
         }
+
+        public ICommand aHp => new RelayCommand(() =>
+                                             {
+                                                 int a = Convert.ToInt32(alarmtimeH);
+                                                 if (a <= 23)
+                                                 {
+                                                     alarmtimeH = (a + 1).ToString();
+                                                 }
+
+                                             });
+        public ICommand aHm => new RelayCommand(() =>
+                                             {
+                                                 int a = Convert.ToInt32(alarmtimeH);
+                                                 if (a >= 1)
+                                                 {
+                                                     alarmtimeH = (a - 1).ToString();
+                                                 }
+                                             });
+        public ICommand aMp => new RelayCommand(() =>
+                                             {
+                                                 int a = Convert.ToInt32(alarmtimeM);
+                                                 if (a <= 59)
+                                                 {
+                                                     alarmtimeM = (a + 1).ToString();
+                                                 }
+
+                                             });
+        public ICommand aMm => new RelayCommand(() =>
+                                             {
+                                                 int a = Convert.ToInt32(alarmtimeM);
+                                                 if (a >= 1)
+                                                 {
+                                                     alarmtimeM = (a - 1).ToString();
+                                                 }
+                                             });
 
         public ICommand Setalarm
         {
@@ -152,6 +187,7 @@ namespace zclclock.Model
                 });
             }
         }
+
     }
     class countdown :ObservableObject
     {
@@ -252,5 +288,50 @@ namespace zclclock.Model
                 });
             }
         }
+        public ICommand cHp => new RelayCommand(() =>
+        {
+            if (ctimeH <= 23)
+            {
+                ctimeH = ctimeH + 1;
+            }
+        });
+        public ICommand cHm => new RelayCommand(() =>
+        {
+            if (ctimeH >= 1)
+            {
+                ctimeH = ctimeH - 1;
+            }
+        });
+
+        public ICommand cMp => new RelayCommand(() =>
+        {
+            if (ctimeM <= 59)
+            {
+                ctimeM = ctimeM + 1;
+            }
+        });
+        public ICommand cMm => new RelayCommand(() =>
+        {
+            if (ctimeM >= 1)
+            {
+                ctimeM = ctimeM - 1;
+            }
+        });
+
+        public ICommand cSp => new RelayCommand(() =>
+        {
+            if (ctimeS <= 59)
+            {
+                ctimeS = ctimeS + 1;
+            }
+        });
+        public ICommand cSm => new RelayCommand(() =>
+        {
+            if (ctimeS >= 1)
+            {
+                ctimeS = ctimeS - 1;
+            }
+        });
+
     }
 }
